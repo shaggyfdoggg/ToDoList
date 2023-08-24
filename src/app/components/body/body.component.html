@@ -1,0 +1,11 @@
+<table>
+    <tr>
+      <th>Task</th>
+      <th>Complete?</th>
+    </tr>
+    <tr *ngFor="let t of toDoList">
+        <td>{{t.task}}</td>
+        <td><button (click)="completeTask(t)" *ngIf="!t.completed" >Complete</button></td>
+    </tr>
+  </table>
+
