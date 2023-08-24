@@ -38,20 +38,23 @@ export class BodyComponent {
       completed: false
     }
   ] 
-  allTasks:Todo[] = [];
+  //allTasks:Todo[] = [];
   newTask:Todo = {} as Todo;
+
   completeTask(completedTask:Todo):void{
-    let index = this.allTasks.findIndex((t:Todo) => t == completedTask);
+    let index = this.toDoList.findIndex((t:Todo) => t == completedTask);
     completedTask.completed = true;
   }
 
- 
+  
   addTask():void{
+    console.log(this.newTask);
     let result:Todo = {
       task: this.newTask.task,
-      completed: this.newTask.completed
+      completed: false
+      // completed: this.newTask.completed
     }
-    this.allTasks.push(result);
+    this.toDoList.push(result);
     this.newTask = {} as Todo;
   }
 
